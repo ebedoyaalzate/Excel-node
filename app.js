@@ -9,8 +9,7 @@ var xlData = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]]);
 
 var datos = "";
 
-var cont = 0
-var numScript = 0
+
 var inicioScript = "SELECT a2.sp_num, x.attrib_40  from siebel.s_asset a, siebel.s_asset_x x, siebel.s_asset a2 \n" +
     "where a.row_id = x.row_id \n" +
     "and a.row_id = a2.root_asset_id\n" +
