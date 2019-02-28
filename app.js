@@ -24,10 +24,8 @@ var finScript = "\nORDER BY a2.created DESC ;"
 datos = inicioScript
 
 for (var i = 0; i < xlData.length; i++) {
-
-    cont++
-    if (cont % 1000 === 0) {
-        var numScript = cont / 1000
+    if (i % 1000 === 0 && i != 0) {
+        var numScript = i / 1000
         datos += ")" + finScript
         fs.writeFile(`sql/SCRIPT${numScript}.sql`, datos, (err) => {
             if (err) console.log(err);
